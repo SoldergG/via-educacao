@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Geist } from "next/font/google";
+import { Sora, Geist } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
-  weight: ["500", "600"],
-  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const geistSans = Geist({
@@ -28,9 +27,9 @@ export default function RootLayout({
   return (
     <html
       lang="pt"
-      className={`${cormorant.variable} ${geistSans.variable} h-full antialiased`}
+      className={`${sora.variable} ${geistSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-cream text-ink">{children}</body>
+      <body className="min-h-full flex flex-col bg-bg font-sans text-ink">{children}</body>
     </html>
   );
 }

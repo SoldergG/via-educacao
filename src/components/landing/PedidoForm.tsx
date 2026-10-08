@@ -4,7 +4,7 @@ import { useActionState } from "react";
 import { submeterPedidoAction, type PedidoState } from "@/app/actions/pedido";
 
 const inputClass =
-  "mt-1.5 w-full border border-border bg-cream px-3 py-2 text-sm text-ink outline-none transition focus:border-orange focus:ring-2 focus:ring-orange-soft";
+  "mt-1.5 w-full rounded-xl border border-border bg-bg px-3.5 py-2.5 text-sm text-ink outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100";
 
 const initialState: PedidoState = {};
 
@@ -28,7 +28,9 @@ export function PedidoForm({
 
   if (state.success) {
     return (
-      <p className="border border-olive bg-olive-soft p-6 text-sm text-ink">{successMessage}</p>
+      <p className="rounded-2xl border border-brand-200 bg-brand-50 p-6 text-sm text-brand-800">
+        {successMessage}
+      </p>
     );
   }
 
@@ -70,12 +72,12 @@ export function PedidoForm({
         <textarea name="mensagem" rows={5} className={inputClass} />
       </div>
 
-      {state.error && <p className="text-sm text-orange-dark">{state.error}</p>}
+      {state.error && <p className="text-sm text-brand-700">{state.error}</p>}
 
       <button
         type="submit"
         disabled={pending}
-        className="mt-2 flex h-12 w-fit items-center justify-center bg-olive px-8 text-[13px] font-medium uppercase tracking-[0.12em] text-cream transition-colors hover:bg-olive-dark disabled:opacity-60"
+        className="mt-2 flex h-12 w-fit items-center justify-center rounded-full bg-brand-700 px-8 text-sm font-medium text-white transition-colors hover:bg-brand-800 disabled:opacity-60"
       >
         {pending ? "A enviar…" : submitLabel}
       </button>
